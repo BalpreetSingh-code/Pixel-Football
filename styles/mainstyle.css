@@ -1,0 +1,83 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url('../public/Court.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container */
+#container {
+    position: relative;
+    width: 1000px; /* Fixed width for better testing */
+    height: 875px; /* Add height for explicit sizing */
+    text-align: center;
+}
+
+/* Title Styling */
+#title img {
+    width: 500px; /* Set fixed width for title image */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto;
+    display: block;
+}
+
+/* Trophy Icons */
+#trophies {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.trophy {
+    width: 80px; /* Fixed width for better control */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Character and Ball Alignment */
+#characters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    height: 300px; /* Ensure enough space for characters */
+}
+
+.controller {
+    width: 100px; /* Increased width to make controllers bigger */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 10px; /* Add spacing around controllers */
+}
+
+#characterLeft, #characterRight {
+    width: 300px; /* Fixed width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#soccerBall {
+    width: 80px; /* Fixed width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 20px; /* Add spacing between characters */
+}
+
+/* Start Game Button (Image) */
+#startGame {
+    margin-top: 40px;
+}
+
+#startGameImage {
+    width: 300px; /* Fixed width for the button */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#startGameImage:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}

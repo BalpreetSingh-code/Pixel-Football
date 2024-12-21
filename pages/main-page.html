@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Football</title>
+    <link rel="stylesheet" href="../styles/mainstyle.css">
+</head>
+<body>
+    <div id="container">
+        <!-- Title -->
+        <div id="title">
+            <img src="../public/PixelBlue.png" alt="Pixel Football">
+        </div>
+
+        <!-- Trophy Icons -->
+        <div id="trophies">
+            <img src="../public/GoldTrophy.png" alt="Left Trophy" class="trophy">
+            <img src="../public/BronzeTrophy.png" alt="Right Trophy" class="trophy">
+        </div>
+
+        <!-- Characters, Ball and Controllers-->
+        <div id="characters">
+            <img src="../public/LeftCharacter.png" alt="Left Character" id="characterLeft">
+            <img src="../public/WhiteController.png" alt="Left Controller" class="controller">
+            <img src="../public/SoccerBall.png" alt="Soccer Ball" id="soccerBall">
+            <img src="../public/BlackController.png" alt="Left Controller" class="controller">
+            <img src="../public/RightCharacter.png" alt="Right Character" id="characterRight">
+        </div>
+
+        <!-- Start Game Button -->
+        <div id="startGame">
+            <img src="../public/StartGame.png" alt="Start Game" id="startGameImage">
+        </div>
+    </div>
+
+    <script>
+        // Add logic to navigate to pong.html
+        document.getElementById('startButton').addEventListener('click', function() {
+            window.location.href = "pong.html"; // Replace with the correct path to your game page
+        });
+    </script>
+</body>
+</html>

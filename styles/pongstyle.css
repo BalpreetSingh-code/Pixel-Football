@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../public/Field.png') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+canvas {
+    position: absolute;
+    top: 15px;
+    left: 291px;
+    width: 1246px; /* Adjusted to match CANVAS_WIDTH in JavaScript */
+    height: 1035px; /* Adjusted to match CANVAS_HEIGHT in JavaScript */
+    background: transparent;
+    outline: none;
+}
+
+#scoreBoard {
+    position: absolute;
+    top: 25px;
+    left: 48%;
+    transform: translateX(-50%);
+    font-size: 44px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    text-align: center;
+}
+
+#startButton {
+    position: absolute;
+    bottom: 30px;
+    left: 48%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.paddle {
+    background-color: white;
+    width: 70px; /* Matches PADDLE_WIDTH */
+    height: 70px; /* Matches PADDLE_HEIGHT */
+    position: absolute;
+}
+
+.ball {
+    width: 50px; /* Matches BALL_RADIUS * 2 */
+    height: 50px; /* Matches BALL_RADIUS * 2 */
+    background: url('../public/SoccerBall.png') no-repeat center;
+    background-size: contain;
+    position: absolute;
+}
