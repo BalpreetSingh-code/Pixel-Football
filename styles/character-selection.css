@@ -39,7 +39,7 @@ body {
     transform: scale(1.1);
 }
 
-#playerSlots {
+#playerNames {
     display: flex;
     justify-content: space-around;
     margin: 20px 0;
