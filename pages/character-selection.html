@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Selection</title>
+    <link rel="stylesheet" href="../styles/character-selection.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Character Selection</h1>
+        <div id="characterGrid"></div>
+        <div id="playerSlots">
+            <div id="player1Slot">
+                <h2>Player 1</h2>
+                <div class="skin-options"></div>
+            </div>
+            <div id="player2Slot">
+                <h2>Player 2</h2>
+                <div class="skin-options"></div>
+            </div>
+        </div>
+        <div>
+            <label for="gameDuration">Game Duration (minutes):</label>
+            <input type="range" id="gameDuration" min="5" max="30" step="5" value="15">
+            <span id="durationValue">15</span> minutes
+        </div>
+        <button id="startBattle" disabled>Start Battle</button>
+    </div>
+    <script type="module" src="../scripts/character-selection.js"></script>
+</body>
+</html>
