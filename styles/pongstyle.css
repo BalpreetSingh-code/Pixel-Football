@@ -1,40 +1,45 @@
+/* General Body Styling */
 body {
     margin: 0;
+    padding: 0;
     height: 100vh;
     width: 100vw;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background: url('../public/Field.png') no-repeat center center;
-    background-size: cover;
-    overflow: hidden;
+    align-items: center;
+    background-color: #808080; /* Grey background */
+    overflow: hidden; /* Prevents scrollbars */
 }
 
+/* Canvas Styling */
 canvas {
-    position: absolute;
-    top: 15px;
-    left: 291px;
-    width: 1246px; /* Adjusted to match CANVAS_WIDTH in JavaScript */
-    height: 1035px; /* Adjusted to match CANVAS_HEIGHT in JavaScript */
-    background: transparent;
+    display: block;
+    background: url('../public/Field.png') no-repeat center center;
+    background-size: contain;
     outline: none;
+    /* Allow dynamic resizing via JavaScript */
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
 }
 
+/* Scoreboard Styling */
 #scoreBoard {
     position: absolute;
-    top: 25px;
-    left: 48%;
+    top: 10px;
+    left: 50%;
     transform: translateX(-50%);
     font-size: 44px;
     color: white;
     text-shadow: 2px 2px 4px black;
-    text-align: center;
+    z-index: 1;
 }
 
+/* Start Button Styling */
 #startButton {
     position: absolute;
     bottom: 30px;
-    left: 48%;
+    left: 50%;
     transform: translateX(-50%);
     font-size: 18px;
     padding: 10px 20px;
@@ -43,19 +48,17 @@ canvas {
     color: black;
     border-radius: 5px;
     cursor: pointer;
+    z-index: 1;
 }
 
-.paddle {
-    background-color: white;
-    width: 70px; /* Matches PADDLE_WIDTH */
-    height: 70px; /* Matches PADDLE_HEIGHT */
+/* Game Duration Display */
+#gameDurationDisplay {
     position: absolute;
-}
-
-.ball {
-    width: 50px; /* Matches BALL_RADIUS * 2 */
-    height: 50px; /* Matches BALL_RADIUS * 2 */
-    background: url('../public/SoccerBall.png') no-repeat center;
-    background-size: contain;
-    position: absolute;
+    top: 60px; /* Below the scoreboard */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    z-index: 1;
 }

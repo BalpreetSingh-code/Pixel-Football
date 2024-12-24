@@ -27,7 +27,7 @@ async function fetchCharacters() {
             <img data-src="https://mc-heads.net/avatar/${skin}/100" alt="${skin}">
             <p>${character.getDescription()}</p>
         `;
-        div.addEventListener('click', () => selectCharacter(character));
+        div.addEventListener('click', () => selectCharacter(skin, character));
         characterGrid.appendChild(div);
     });
 
@@ -44,8 +44,35 @@ async function fetchCharacters() {
     document.querySelectorAll('img[data-src]').forEach((img) => observer.observe(img));
 }
 
-function selectCharacter(character) {
-    console.log(`Selected: ${character.getDescription()}`);
+let selectedPlayer1Character = null;
+let selectedPlayer2Character = null;
+
+function selectCharacter(skin, character) {
+    if (!selectedPlayer1Character) {
+        selectedPlayer1Character = skin;
+        alert(`Player 1 selected: ${skin}`);
+    } else if (!selectedPlayer2Character) {
+        selectedPlayer2Character = skin;
+        alert(`Player 2 selected: ${skin}`);
+    }
+
+    // Enable Start Battle button when both players have selected characters
+    if (selectedPlayer1Character && selectedPlayer2Character) {
+        document.getElementById('startBattle').disabled = false;
+    }
 }
+
+// Save data and navigate to pong.html
+document.getElementById('startBattle').addEventListener('click', () => {
+    const gameDuration = document.getElementById('gameDuration').value;
+
+    // Save to localStorage
+    localStorage.setItem('player1Character', selectedPlayer1Character);
+    localStorage.setItem('player2Character', selectedPlayer2Character);
+    localStorage.setItem('gameDuration', gameDuration);
+
+    // Redirect to pong.html
+    window.location.href = '../pages/pong.html';
+});
 
 fetchCharacters();
