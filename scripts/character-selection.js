@@ -24,20 +24,25 @@ let selectedCharacters = {
     player2: null
 };
 
+// Generate characters dynamically using the Character class
 skins.forEach((skin) => {
+    const character = Character.createCharacter('Default Player', 20, skin);
+
     const characterDiv = document.createElement('div');
     characterDiv.className = 'character';
     characterDiv.innerHTML = `
-        <img data-src="https://mc-heads.net/avatar/${skin}/100" alt="${skin}">
-        <p>${skin}</p>
+        <img data-src="https://mc-heads.net/avatar/${skin}/100" alt="${character.characterName}">
+        <p>${character.getDescription()}</p>
         <div class="skin-options">
             <button data-skin="${skin}">Default</button>
             <button data-skin="${skin}-Alt">Alt Skin</button>
         </div>
     `;
+
     characterDiv.querySelectorAll('button').forEach((button) => {
-        button.addEventListener('click', () => selectCharacter(button.dataset.skin, skin));
+        button.addEventListener('click', () => selectCharacter(character, button.dataset.skin));
     });
+
     characterGrid.appendChild(characterDiv);
 });
 
@@ -54,13 +59,13 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('img[data-src]').forEach((img) => observer.observe(img));
 
 // Function to select character
-function selectCharacter(skin, baseSkin) {
+function selectCharacter(character, skin) {
     if (!selectedCharacters.player1) {
-        selectedCharacters.player1 = { skin, baseSkin };
-        player1Slot.innerHTML = `<img src="https://mc-heads.net/avatar/${skin}/100" alt="${skin}">`;
+        selectedCharacters.player1 = { ...character, skin };
+        player1Slot.innerHTML = `<img src="https://mc-heads.net/avatar/${skin}/100" alt="${character.characterName}">`;
     } else if (!selectedCharacters.player2) {
-        selectedCharacters.player2 = { skin, baseSkin };
-        player2Slot.innerHTML = `<img src="https://mc-heads.net/avatar/${skin}/100" alt="${skin}">`;
+        selectedCharacters.player2 = { ...character, skin };
+        player2Slot.innerHTML = `<img src="https://mc-heads.net/avatar/${skin}/100" alt="${character.characterName}">`;
     }
 
     if (selectedCharacters.player1 && selectedCharacters.player2) {
@@ -77,8 +82,8 @@ gameDurationInput.addEventListener('input', () => {
 
 // Start battle
 startBattleButton.addEventListener('click', () => {
-    localStorage.setItem('player1Character', selectedCharacters.player1.skin);
-    localStorage.setItem('player2Character', selectedCharacters.player2.skin);
+    localStorage.setItem('player1Character', JSON.stringify(selectedCharacters.player1));
+    localStorage.setItem('player2Character', JSON.stringify(selectedCharacters.player2));
     localStorage.setItem('gameDuration', gameDurationInput.value);
     window.location.href = '../pages/pong.html';
 });

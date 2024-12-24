@@ -2,7 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #222;
+    background: url('../public/Court.png') no-repeat center center; /* Set the background image */
+    background-size: cover; /* Ensure the image covers the entire screen */
     color: white;
     display: flex;
     justify-content: center;
@@ -37,7 +38,7 @@ body {
     border: 2px dashed #555;
     border-radius: 5px;
     margin-top: 10px;
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.8); /* Slightly transparent background */
 }
 
 .character-grid {
@@ -48,7 +49,7 @@ body {
 }
 
 .character {
-    background-color: #444;
+    background-color: rgba(68, 68, 68, 0.8); /* Slightly transparent background */
     padding: 10px;
     border-radius: 5px;
     text-align: center;

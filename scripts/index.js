@@ -31,13 +31,13 @@ document.getElementById('playerForm').addEventListener('submit', function (e) {
     const player2Age = parseInt(document.getElementById('player2Age').value, 10);
 
     // Validate final inputs before submission
-    if (!player1Name || player1Age <= 10 || isNaN(player1Age)) {
-        alert('Player 1 must enter a valid name and an age greater than 10.');
+    if (!player1Name || player1Age < 10 || player1Age > 100 || isNaN(player1Age)) {
+        alert('Player 1 must enter a valid name and a age between 10-100.');
         return;
     }
 
-    if (!player2Name || player2Age <= 10 || isNaN(player2Age)) {
-        alert('Player 2 must enter a valid name and an age greater than 10.');
+    if (!player2Name || player2Age < 10 || player2Age > 100 || isNaN(player2Age)) {
+        alert('Player 2 must enter a valid name and an age between 10-100');
         return;
     }
 

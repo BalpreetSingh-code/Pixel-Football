@@ -1,3 +1,4 @@
+/* General Body Styling */
 body {
     margin: 0;
     padding: 0;
@@ -5,45 +6,75 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    font-family: 'Arial', sans-serif;
+    background: url('../public/Court.png') no-repeat center center; /* Set the image */
+    background-size: cover; /* Ensure the image covers the entire screen */
+    overflow: hidden; /* Prevent scrolling */
 }
 
+/* Main Container Styling */
 .container {
     text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent white for contrast */
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
+    max-width: 400px;
+    width: 90%;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Input Group Styling */
 .input-group {
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
+/* Label Styling */
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
 }
 
+/* Input Field Styling */
 input {
-    padding: 8px;
+    padding: 10px;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
+input:focus {
+    border-color: #007bff; /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Light glow on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button Styling */
 button {
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 12px 25px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+button:active {
+    background-color: #003d7a; /* Even darker on click */
+    transform: scale(0.95); /* Slightly shrink on click */
 }
