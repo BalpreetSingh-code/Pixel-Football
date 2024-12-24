@@ -9,16 +9,30 @@
 <body>
     <div class="container">
         <h1>Character Selection</h1>
-        <div id="characterGrid"></div>
-        <div id="playerNames">
-            <h2 id="player1NameDisplay">Player 1</h2>
-            <h2 id="player2NameDisplay">Player 2</h2>
+
+        <!-- Player Names and Slots Side by Side -->
+        <div id="playerSlots">
+            <div class="player-container">
+                <h2 id="player1NameDisplay">Player 1</h2>
+                <div id="player1Slot" class="player-slot"></div>
+            </div>
+            <div class="player-container">
+                <h2 id="player2NameDisplay">Player 2</h2>
+                <div id="player2Slot" class="player-slot"></div>
+            </div>
         </div>
-        <div>
+
+        <!-- Character Grid -->
+        <div id="characterGrid" class="character-grid"></div>
+
+        <!-- Game Duration Slider -->
+        <div class="slider-container">
             <label for="gameDuration">Game Duration (minutes):</label>
             <input type="range" id="gameDuration" min="5" max="30" step="5" value="15">
             <span id="durationValue">15</span> minutes
         </div>
+
+        <!-- Start Battle Button -->
         <button id="startBattle" disabled>Start Battle</button>
     </div>
     <script type="module" src="../scripts/character-selection.js"></script>
